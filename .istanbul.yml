@@ -1,0 +1,7 @@
+instrumentation:
+  root: src
+  extensions: ['.js', '.jsx']
+  include-all-sources: true
+  es-module: true
+reporting:
+  dir: reports
