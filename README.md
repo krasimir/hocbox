@@ -15,7 +15,7 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 ```js
 class DumpComponent extends React.Component {
   render() {
-    return <p>{ `${ this.props.text } ${ this.props.name }` }</p>;
+    return <p>{ this.props.text }</p>;
   }
 }
 
@@ -25,7 +25,7 @@ const { set, Component } = feed(DumpComponent);
 <Component />
 
 // sometime after that
-set({ text: 'Hello', name: 'World' });
+set({ text: 'Hello' });
 
-// we triggered a new render and we have "Hello World" on the screen
+// we triggered a new render and we have "Hello" on the screen
 ```
