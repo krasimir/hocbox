@@ -2,8 +2,9 @@
   "name": "hocbox",
   "version": "0.1.0",
   "description": "A collection of HOC react components",
-  "main": "index.js",
+  "main": "./lib/",
   "scripts": {
+    "build": "npm run test && babel src --out-dir lib",
     "test": "./node_modules/.bin/mocha --require babel-register --require babel-polyfill --require test/setup.js --require jsdom-global/register --reporter spec --slow 100 './test/spec/**/**.spec.{js,jsx}'",
     "test:watch": "./node_modules/.bin/mocha --require babel-register --require babel-polyfill --require test/setup.js --require jsdom-global/register --reporter spec --slow 100 --watch --watch-extensions jx,jsx,json './test/spec/**/**.spec.{js,jsx}'"
   },
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/krasimir/hocbox#readme",
   "devDependencies": {
+    "babel-cli": "6.24.0",
     "babel-plugin-add-module-exports": "0.2.0",
     "babel-plugin-dynamic-import-node": "1.0.0",
     "babel-plugin-jsx-strip-ext": "1.0.0",
