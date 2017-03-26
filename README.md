@@ -8,30 +8,24 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 `npm i hocbox`
 
-## Features
+## Simple usage
 
-The HOCs here are single-job utility functions that help developing React applications without the hustle of learning a new framework. Simple functions doing simple things!
-
-### waitFor
-
-`waitFor` is useful when you want to render a component with some delay. For example you don't have the data yet. Calling `waitFor` and passing your original component results in a function and higher-order component.
+### `feed`
 
 ```js
-import { waitFor } from 'hocbox';
-import MyComponent from './MyComponent.jsx';
+class DumpComponent extends React.Component {
+  render() {
+    return <p>{ `${ this.props.text } ${ this.props.name }` }</p>;
+  }
+}
 
-const { done, Component } = waitFor(MyComponent);
+const { set, Component } = feed(DumpComponent);
 
-// feel free to render <Component /> now
+// render your component
 <Component />
 
-// now do some async work
-getData().then(function (result) {
+// sometime after that
+set({ text: 'Hello', name: 'World' });
 
-  // fire done() when you are ready
-  // and your original component will be displayed on the screen
-  done({ items: result.items });
-});
-
+// we triggered a new render and we have "Hello World" on the screen
 ```
-
