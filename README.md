@@ -8,11 +8,13 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 `npm i hocbox`
 
-## Simple usage
+## API
 
 ### `feed`
 
 ```js
+import { feed } from 'hocbox';
+
 class DumpComponent extends React.Component {
   render() {
     return <p>{ this.props.text }</p>;

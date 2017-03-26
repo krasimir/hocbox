@@ -17,7 +17,7 @@ function renderComponent(Component, props = {}) {
 describe('Given the food helper', function () {
   describe('when rendering the component', function () {
     it('should render "Hello world"', function () {
-      const { set, Component } = feed(DumpComponent);
+      const { update, Component } = feed(DumpComponent);
       const component = renderComponent(Component);
 
       expect(component.text()).to.equal('Hello World');
@@ -25,7 +25,7 @@ describe('Given the food helper', function () {
   });
   describe('when we pass our own props', function () {
     it('should render "Hey dude"', function () {
-      const { set, Component } = feed(DumpComponent);
+      const { update, Component } = feed(DumpComponent);
       const component = renderComponent(Component, { text: 'Hey', name: 'dude' });
 
       expect(component.text()).to.equal('Hey dude');
@@ -33,19 +33,19 @@ describe('Given the food helper', function () {
   });
   describe('when we feed the component after the first render', function () {
     it('should render "Dear component"', function () {
-      const { set, Component } = feed(DumpComponent);
+      const { update, Component } = feed(DumpComponent);
       const component = renderComponent(Component);
 
-      set({ text: 'Dear', name: 'React' });
-      set({ text: 'Dear', name: 'component' });
+      update({ text: 'Dear', name: 'React' });
+      update({ text: 'Dear', name: 'component' });
 
       expect(component.text()).to.equal('Dear component');
     });
   });
   describe('when we feed before to have the component rendered', function () {
     it('should render "Dear programmer"', function () {
-      const { set, Component } = feed(DumpComponent);
-      set({ text: 'Dear', name: 'programmer' });
+      const { update, Component } = feed(DumpComponent);
+      update({ text: 'Dear', name: 'programmer' });
 
       const component = renderComponent(Component);
 
