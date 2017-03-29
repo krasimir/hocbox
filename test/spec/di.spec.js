@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { register, wire, invalidate, clear } from '../../src';
+import hocbox from '../../src';
+
+const { register, wire, invalidate, clear } = hocbox;
 
 class DumpComponent extends React.Component {
   render() {

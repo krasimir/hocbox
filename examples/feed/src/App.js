@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { update, Display } from './Display';
+import { feed, Display } from './Display';
 
 var value = 1;
 
@@ -10,7 +10,7 @@ class App extends Component {
 }
 
 setInterval(() => {
-  update({ value: ++value });
+  feed({ value: ++value });
 }, 1000);
 
 export default App;

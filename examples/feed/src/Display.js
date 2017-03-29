@@ -1,5 +1,5 @@
 import React from 'react';
-import { feed } from '../../../lib';
+import hocbox from '../../../lib';
 
 class DisplayBase extends React.Component {
   render() {
@@ -10,6 +10,6 @@ DisplayBase.defaultProps = {
   value: '-'
 };
 
-const { update, Component: Display } = feed(DisplayBase);
+const { feed, Component: Display } = hocbox.feed(DisplayBase);
 
-export { update, Display };
+export { feed, Display };

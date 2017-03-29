@@ -17,7 +17,7 @@ export default function feed(Component) {
         return <Component { ...this.props } { ...this.state.feedProps } />;
       }
     },
-    update: function (props) {
+    feed: function (props) {
       _defaultFeedProps = props;
       if (_listener) _listener(props);
     }

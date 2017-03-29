@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { waitFor } from '../../src';
+import hocbox from '../../src';
 
 class DumpComponent extends React.Component {
   render() {
@@ -17,7 +17,7 @@ function renderComponent(Component, props = {}) {
 describe('Given the waitFor helper', function () {
   describe('when initial rendering', function () {
     it('should render nothing', function () {
-      const { Component } = waitFor(DumpComponent);
+      const { Component } = hocbox.waitFor(DumpComponent);
       const component = renderComponent(Component);
 
       expect(component.find('p')).to.have.length(0);
@@ -25,7 +25,7 @@ describe('Given the waitFor helper', function () {
   });
   describe('when calling the "done" callback', function () {
     it('should render "Hey dude"', function () {
-      const { done, Component } = waitFor(DumpComponent);
+      const { done, Component } = hocbox.waitFor(DumpComponent);
       const component = renderComponent(Component);
 
       done({ text: 'Hey', name: 'dude' })

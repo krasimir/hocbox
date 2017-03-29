@@ -93,7 +93,7 @@ FN:9,(anonymous_6)
 FN:10,FeedComponent
 FN:14,_listener
 FN:9,render
-FN:20,update
+FN:20,feed
 FNF:6
 FNH:6
 FNDA:4,feed
@@ -101,7 +101,7 @@ FNDA:4,(anonymous_6)
 FNDA:4,FeedComponent
 FNDA:2,_listener
 FNDA:6,render
-FNDA:3,update
+FNDA:3,feed
 DA:2,1
 DA:6,4
 DA:8,4
