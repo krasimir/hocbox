@@ -17,7 +17,7 @@ function renderComponent(Component, props = {}) {
 describe('Given the waitFor helper', function () {
   describe('when initial rendering', function () {
     it('should render nothing', function () {
-      const { Component } = hocbox.waitFor(DumpComponent);
+      const Component = hocbox.waitFor(DumpComponent);
       const component = renderComponent(Component);
 
       expect(component.find('p')).to.have.length(0);
@@ -25,10 +25,10 @@ describe('Given the waitFor helper', function () {
   });
   describe('when calling the "done" callback', function () {
     it('should render "Hey dude"', function () {
-      const { done, Component } = hocbox.waitFor(DumpComponent);
+      const Component = hocbox.waitFor(DumpComponent);
       const component = renderComponent(Component);
 
-      done({ text: 'Hey', name: 'dude' })
+      Component.done({ text: 'Hey', name: 'dude' })
 
       expect(component.text()).to.equal('Hey dude');
     });

@@ -1,15 +1,13 @@
 import React from 'react';
 import hocbox from '../../../lib';
 
-class DisplayBase extends React.Component {
+class Display extends React.Component {
   render() {
     return <p>Value is { this.props.value }</p>;
   }
 };
-DisplayBase.defaultProps = {
+Display.defaultProps = {
   value: '-'
 };
 
-const { feed, Component: Display } = hocbox.feed(DisplayBase);
-
-export { feed, Display };
+export default hocbox.feed(Display);
