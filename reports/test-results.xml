@@ -1,11 +1,8 @@
-<testsuite name="Mocha Tests" tests="9" failures="0" errors="0" skipped="0" timestamp="Sun, 02 Apr 2017 07:33:53 GMT" time="0.357">
-<testcase classname="Given the wire and register helpers when we register dependency and wire a component to it" name="should receive valid props" time="0.028"/>
-<testcase classname="Given the wire and register helpers when we use two storages" name="should keep the data in separate storages" time="0.009"/>
-<testcase classname="Given the wire and register helpers when asking for a missing storage" name="should throw an error" time="0.001"/>
-<testcase classname="Given the food helper when rendering the component" name="should render &quot;Hello world&quot;" time="0.002"/>
+<testsuite name="Mocha Tests" tests="6" failures="0" errors="0" skipped="0" timestamp="Sun, 02 Apr 2017 07:53:20 GMT" time="0.362">
+<testcase classname="Given the wire and register helpers when we register dependency and wire a component to it" name="should receive valid props" time="0.023"/>
+<testcase classname="Given the wire and register helpers when we use two storages" name="should keep the data in separate storages" time="0.007"/>
+<testcase classname="Given the food helper when rendering the component" name="should render &quot;Hello world&quot;" time="0.009"/>
 <testcase classname="Given the food helper when we pass our own props" name="should render &quot;Hey dude&quot;" time="0.001"/>
-<testcase classname="Given the food helper when we feed the component after the first render" name="should render &quot;Dear component&quot;" time="0.001"/>
-<testcase classname="Given the food helper when we feed before to have the component rendered" name="should render &quot;Dear programmer&quot;" time="0.002"/>
-<testcase classname="Given the waitFor helper when initial rendering" name="should render nothing" time="0.004"/>
-<testcase classname="Given the waitFor helper when calling the &quot;done&quot; callback" name="should render &quot;Hey dude&quot;" time="0.003"/>
+<testcase classname="Given the food helper when we feed the component after the first render" name="should render &quot;Dear component&quot;" time="0.002"/>
+<testcase classname="Given the food helper when we feed before to have the component rendered" name="should render &quot;Dear programmer&quot;" time="0.001"/>
 </testsuite>

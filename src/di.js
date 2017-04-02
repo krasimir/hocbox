@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 var Data = {};
@@ -12,7 +11,7 @@ function dependenciesToProps(dependencies, mapToProps, storage) {
   return mapToProps.apply({}, deps);
 }
 function registerDependenciesToPropsCallback(func, storage) {
-  if (!Data[storage]) throw new Error(`Hocbox: Missing storage with name = "${ storage }"`);
+  if (!Data[storage]) Data[storage] = {};
   if (!Data[storage].___dependenciesToProps___) Data[storage].___dependenciesToProps___ = [];
   Data[storage].___dependenciesToProps___.push(func);
 }
@@ -38,7 +37,7 @@ export function wire(Component, dependencies, mapToProps, storage = 'hocbox') {
 
   registerDependenciesToPropsCallback(() => _listener && _listener(), storage);
 
-  return class FeedComponent extends React.Component {
+  return class DIComponent extends React.Component {
     constructor(props) {
       super(props);
 

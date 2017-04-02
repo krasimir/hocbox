@@ -71,18 +71,4 @@ describe('Given the wire and register helpers', function () {
 
     });
   });
-  describe('when asking for a missing storage', function () {
-    it('should throw an error', function () {
-      try {
-        wire(
-          DumpComponent,
-          ['Foo'],
-          () => {},
-          'abcdef'
-        );
-      } catch (err) {
-        expect(err.message).to.contain('abcdef');
-      }
-    });
-  });
 });

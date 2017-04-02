@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import Display from './Display';
+import hocbox from '../../lib';
+import Display from './components/Display';
 
 var value = 1;
+
+hocbox.register({ TitleText: 'Hello world' });
+
 
 class App extends Component {
   render() {
