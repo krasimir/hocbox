@@ -26,7 +26,7 @@ class Title extends React.Component {
 
 export default hocbox.feed(Title);
 
-// app.js
+// App.js
 import Title from './Title.jsx';
 
 class App extends React.Component {
