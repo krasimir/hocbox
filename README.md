@@ -15,7 +15,7 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 > For the cases where we want to rerender a component with given props
 
 ```js
-// Title.jsx
+// ------------------------------------- Title.jsx
 import hocbox from 'hocbox';
 
 class Title extends React.Component {
@@ -26,7 +26,7 @@ class Title extends React.Component {
 
 export default hocbox.feed(Title);
 
-// App.js
+// ------------------------------------- App.js
 import Title from './Title.jsx';
 
 class App extends React.Component {
