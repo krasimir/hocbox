@@ -51,4 +51,22 @@ describe('Given the food helper', function () {
       expect(component.text()).to.equal('Dear programmer');
     });
   });
+  describe('when we need to control two difference instance', function () {
+    it('should feed them separately', function () {
+      const Component = hocbox.feed(DumpComponent);
+      const feed1 = () => ({ text: 'Dear', name: 'developer' });
+      const feed2 = () => ({ text: 'Dear', name: 'designer' });
+
+
+      const component1 = renderComponent(Component, { feeder: feed1 });
+      const component2 = renderComponent(Component, { feeder: feed2 });
+
+      Component.feed();
+
+      expect(component1.text()).to.equal('Dear developer');
+      expect(component1.text()).to.not.equal('Dear designer');
+      expect(component2.text()).to.equal('Dear designer');
+      expect(component2.text()).to.not.equal('Dear developer');
+    });
+  });
 });
