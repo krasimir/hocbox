@@ -29,11 +29,17 @@ export default hocbox.feed(Title);
 // app.js
 import Title from './Title.jsx';
 
-// render your component
-<Title />
-
-// sometime after that
-Title.feed({ text: 'Hello' });
-
-// we triggered a new render and we have "Hello" on the screen
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Title />
+        <button onClick={ this._buttonClicked }>Click me</button>
+      </div>
+    );
+  }
+  _buttonClicked() {
+    Title.feed({ text: 'Hello world' });
+  }
+}
 ```
