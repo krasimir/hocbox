@@ -12,22 +12,28 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 ### `feed`
 
-```js
-import { feed } from 'hocbox';
+> For the cases where we want to rerender a component with given props
 
-class DumpComponent extends React.Component {
+```js
+// Title.jsx
+import hocbox from 'hocbox';
+
+class Title extends React.Component {
   render() {
     return <p>{ this.props.text }</p>;
   }
 }
 
-const { set, Component } = feed(DumpComponent);
+export default hocbox.feed(Title);
+
+// app.js
+import Title from './Title.jsx';
 
 // render your component
-<Component />
+<Title />
 
 // sometime after that
-set({ text: 'Hello' });
+Title.feed({ text: 'Hello' });
 
 // we triggered a new render and we have "Hello" on the screen
 ```
