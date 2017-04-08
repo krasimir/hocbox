@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import hocbox from '../../lib';
 import Display from './components/Display';
-import Message from './components/Message.js'
+import FeedPlayground from './components/FeedPlayground';
 
 var value = 1;
 
@@ -13,8 +13,7 @@ class App extends Component {
       <div>
         <Display />
         <hr />
-        <Message />
-        <button onClick={ () => Message.feed({ text: 'It works' }) }>click me</button>
+        <FeedPlayground />
       </div>
     );
   }

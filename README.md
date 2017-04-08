@@ -12,34 +12,20 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 ### `feed`
 
-> For the cases where we want to rerender a component with given props
+> For the cases when we want to rerender a component with given props
 
 ```js
-// ------------------------------------- Title.jsx
 import hocbox from 'hocbox';
 
-class Title extends React.Component {
-  render() {
-    return <p>{ this.props.text }</p>;
-  }
-}
+const Component = function({ answer }) {
+  return <p>The answer is { answer || '...' }</p>;
+};
 
-export default hocbox.feed(Title);
+const UI = hocbox.feed(Component);
 
-// ------------------------------------- App.js
-import Title from './Title.jsx';
-
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Title />
-        <button onClick={ this._buttonClicked }>Click me</button>
-      </div>
-    );
-  }
-  _buttonClicked() {
-    Title.feed({ text: 'Hello world' });
-  }
-}
+Service('/api/get/the/answer').then(data => {
+  UI.feed({ answer: data });
+});
 ```
+
+`Service` in the exampe above is just a HTTP layer that fetches data from let's say API.
