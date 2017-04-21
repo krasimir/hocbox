@@ -14,9 +14,9 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 > For the cases when we want to rerender a component with given props
 
-| returns                                    
-| :-------------------------------------------
-| React Component with a static method `feed`
+| accepts | returns                                    
+| :--- | :---
+| React component | React Component with a static method `feed`
 
 
 ```js
