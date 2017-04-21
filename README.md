@@ -15,7 +15,7 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 <table>
   <tbody>
   <tr>
-    <td colspan="2" align="center"><strong><code>hocbox.feed(&lt;component>):&lt;component></code></strong></td>
+    <td colspan="2"><strong><code>hocbox.feed(&lt;component>):&lt;component></code></strong></td>
   </tr>
   <tr>
     <td colspan="2">For the cases when we want to rerender a component with given props</td>
@@ -62,7 +62,7 @@ Service('/api/get/the/answer').then(data => {
 <table>
   <tbody>
   <tr>
-    <td colspan="2" align="center"><strong><code>hocbox.register(&lt;object>)</code></strong></td>
+    <td colspan="2"><strong><code>hocbox.register(&lt;object>)</code></strong></td>
   </tr>
   <tr>
     <td colspan="2">Defines dependencies</td>
@@ -81,7 +81,7 @@ Service('/api/get/the/answer').then(data => {
 <table>
   <tbody>
   <tr>
-    <td colspan="2" align="center"><strong><code>
+    <td colspan="2"><strong><code>
       hocbox.wire(&lt;component>, &lt;array>, &lt;function>)
     </code></strong></td>
   </tr>
