@@ -17,7 +17,7 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 <table>
   <tbody>
   <tr>
-    <td colspan="2" align="center"><strong><code>hocbox.feed(<component>)</code></strong></td>
+    <td colspan="2" align="center"><strong><code>hocbox.feed(&lt;component>)</code></strong></td>
   </tr>
   <tr>
     <td><strong>accepts</strong></td>
