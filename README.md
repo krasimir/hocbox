@@ -14,10 +14,14 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 > For the cases when we want to rerender a component with given props
 
+--- | ---
+returns | React Component with a static method `feed`
+
+
 ```js
 import hocbox from 'hocbox';
 
-// We define a component
+// We pass a React Component to hocbox.feed
 const Component = hocbox.feed(function({ answer }) {
   return <p>The answer is { answer || '...' }</p>;
 });
