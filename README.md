@@ -14,9 +14,18 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 > For the cases when we want to rerender a component with given props
 
-|  | description
-| :--- | :---
-| React component | React Component with a static method `feed`
+<table>
+  <tbody>
+  <tr>
+    <td><strong>accepts</strong></td>
+    <td>React component</td>
+  </tr>
+  <tr>
+    <td><strong>returns</strong></td>
+    <td>React Component with a static method `feed`</td>
+  </tr>
+  </tbody>
+</table>
 
 
 ```js
