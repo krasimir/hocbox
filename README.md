@@ -10,6 +10,8 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 ## API
 
+---
+
 ### `feed`
 
 <table>
@@ -56,6 +58,8 @@ Service('/api/get/the/answer').then(data => {
 ```
 
 *`Service` in the exampe above is just a HTTP layer that fetches data from let's say API.*
+
+---
 
 ### `Dependency injection`
 
