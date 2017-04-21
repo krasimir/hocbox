@@ -86,7 +86,7 @@ Service('/api/get/the/answer').then(data => {
   <tbody>
   <tr>
     <td colspan="2"><strong><code>
-      hocbox.wire(&lt;component>, &lt;array>, &lt;function>)
+      hocbox.wire(&lt;component>, &lt;array>, &lt;function>):&lt;component>
     </code></strong></td>
   </tr>
   <tr>
