@@ -26,7 +26,7 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
   </tr>
   <tr>
     <td><strong>returns</strong></td>
-    <td>React Component with a static method `feed`</td>
+    <td>Enhanced React Component with a static method `feed`</td>
   </tr>
   </tbody>
 </table>
@@ -59,7 +59,51 @@ Service('/api/get/the/answer').then(data => {
 
 ### `Dependency injection`
 
-> For the cases where we want to pass value/configuration/something to a component but it is deeper in our tree
+<table>
+  <tbody>
+  <tr>
+    <td colspan="2" align="center"><strong><code>hocbox.register(&lt;object>)</code></strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">Defines dependencies</td>
+  </tr>
+  <tr>
+    <td><strong>accepts</strong></td>
+    <td>Object of key-value props</td>
+  </tr>
+  <tr>
+    <td><strong>returns</strong></td>
+    <td>nothing</td>
+  </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+  <tr>
+    <td colspan="2" align="center"><strong><code>
+      hocbox.wire(&lt;component>, &lt;array>, &lt;function>)
+    </code></strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">We describe what dependencies we need and map them to props sent to our component.</td>
+  </tr>
+  <tr>
+    <td><strong>accepts</strong></td>
+    <td>
+      <ul>
+        <li>React component</li>
+        <li>Array of strings where every string is a key used in the <code>register</code> method</li>
+        <li>Function that accepts the dependencies and has to return an object of key-value props</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>returns</strong></td>
+    <td>Enhanced React component</td>
+  </tr>
+  </tbody>
+</table>
 
 ```js
 // in App.js
