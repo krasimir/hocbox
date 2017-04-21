@@ -17,6 +17,9 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 <table>
   <tbody>
   <tr>
+    <td colspan="2"><strong><code>feed</code></strong></td>
+  </tr>
+  <tr>
     <td><strong>accepts</strong></td>
     <td>React component</td>
   </tr>
