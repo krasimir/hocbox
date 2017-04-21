@@ -17,18 +17,27 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 ```js
 import hocbox from 'hocbox';
 
-const Component = function({ answer }) {
+// We define a component
+const Component = hocbox.feed(function({ answer }) {
   return <p>The answer is { answer || '...' }</p>;
-};
-
-const UI = hocbox.feed(Component);
-
-Service('/api/get/the/answer').then(data => {
-  UI.feed({ answer: data });
 });
+
+// ... and we render our Component
+class App extends React.Component {
+  render() {
+    return <div><Component /></div>;
+  }
+}
+
+// Then later we rerender with given props
+Service('/api/get/the/answer').then(data => {
+  Component.feed({ answer: data });
+});
+
+
 ```
 
-`Service` in the exampe above is just a HTTP layer that fetches data from let's say API.
+*`Service` in the exampe above is just a HTTP layer that fetches data from let's say API.*
 
 ### `Dependency injection`
 
