@@ -4,15 +4,15 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 ---
 
-## Installation
+# Installation
 
 `npm i hocbox`
 
-## API
+# API
 
 ---
 
-### `feed`
+## `feed`
 
 <table>
   <tbody>
@@ -61,7 +61,7 @@ Service('/api/get/the/answer').then(data => {
 
 ---
 
-### `Dependency injection`
+## `Dependency injection`
 
 <table>
   <tbody>
