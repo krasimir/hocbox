@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import hocbox from '../../lib';
 import Display from './components/Display';
 import FeedPlayground from './components/FeedPlayground';
+import SignalsPlayground from './components/SignalsPlayground';
 
 var value = 1;
 
@@ -14,6 +15,8 @@ class App extends Component {
         <Display />
         <hr />
         <FeedPlayground />
+        <hr />
+        <SignalsPlayground />
       </div>
     );
   }
