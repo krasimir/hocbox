@@ -1,6 +1,6 @@
 import feed from './feed';
 import { wire, register, invalidate, clear } from './di';
-import { signal, dispatch, subscribe } from './signal';
+import { signal, dispatch, subscribe, unsubscribe, getLog, clearLog } from './signal';
 
 export default {
   feed,
@@ -10,5 +10,8 @@ export default {
   clear,
   signal,
   dispatch,
-  subscribe
+  subscribe,
+  unsubscribe,
+  getLog,
+  clearLog
 };
