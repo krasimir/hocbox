@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import hocbox from '../../src';
+import { feed } from '../../src';
 
 class DumpComponent extends React.Component {
   render() {
@@ -17,21 +17,21 @@ function renderComponent(Component, props = {}) {
 describe('Given the food helper', function () {
   describe('when rendering the component', function () {
     it('should render "Hello world"', function () {
-      const component = renderComponent(hocbox.feed(DumpComponent));
+      const component = renderComponent(feed(DumpComponent));
 
       expect(component.text()).to.equal('Hello World');
     });
   });
   describe('when we pass our own props', function () {
     it('should render "Hey dude"', function () {
-      const component = renderComponent(hocbox.feed(DumpComponent), { text: 'Hey', name: 'dude' });
+      const component = renderComponent(feed(DumpComponent), { text: 'Hey', name: 'dude' });
 
       expect(component.text()).to.equal('Hey dude');
     });
   });
   describe('when we feed the component after the first render', function () {
     it('should render "Dear component"', function () {
-      const Component = hocbox.feed(DumpComponent);
+      const Component = feed(DumpComponent);
       const component = renderComponent(Component);
 
       Component.feed({ text: 'Dear', name: 'React' });
@@ -42,7 +42,7 @@ describe('Given the food helper', function () {
   });
   describe('when we feed before to have the component rendered', function () {
     it('should render "Dear programmer"', function () {
-      const Component = hocbox.feed(DumpComponent);
+      const Component = feed(DumpComponent);
 
       Component.feed({ text: 'Dear', name: 'programmer' });
 
@@ -53,7 +53,7 @@ describe('Given the food helper', function () {
   });
   describe('when we need to control two difference instance', function () {
     it('should feed them separately', function () {
-      const Component = hocbox.feed(DumpComponent);
+      const Component = feed(DumpComponent);
       const feed1 = () => ({ text: 'Dear', name: 'developer' });
       const feed2 = () => ({ text: 'Dear', name: 'designer' });
 

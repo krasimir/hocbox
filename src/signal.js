@@ -4,6 +4,10 @@ var SignalStorage = {};
 var SignalComponentID = 0;
 var SignalLog = [];
 
+function getNewId() {
+  return ++SignalComponentID;
+}
+
 export function getLog() {
   return SignalLog;
 }
@@ -26,6 +30,10 @@ export function dispatch(key, data, source) {
 }
 export function subscribe(key, signalID, callback) {
   if (!SignalStorage[key]) SignalStorage[key] = {};
+  if (typeof signalID === 'function') {
+    callback = signalID;
+    signalID = getNewId();
+  }
   if (!SignalStorage[key][signalID]) {
     SignalStorage[key][signalID] = callback;
   }
@@ -44,7 +52,7 @@ export function signal(Component) {
   return class SignalComponent extends React.Component {
     constructor(props) {
       super(props);
-      this._signalID = (Component.name || '') + '_' + (++SignalComponentID);
+      this._signalID = (Component.name || '') + '_' + getNewId();
       this._dispatch = (key, data) => {
         dispatch(key, data, this._signalID);
       }

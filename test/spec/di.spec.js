@@ -1,15 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import hocbox from '../../src';
-
-const { register, wire, invalidate, clear } = hocbox;
+import { register, wire, invalidate, clear } from '../../src';
 
 class DumpComponent extends React.Component {
   render() {
     return <p>{ this.props.getText() }</p>;
   }
 }
-var Foo;
+var Foo, Bar;
 
 function renderComponent(Component, props = {}) {
   return mount(<Component { ...props } />);
@@ -25,7 +23,7 @@ describe('Given the wire and register helpers', function () {
   });
 
   describe('when we register dependency and wire a component to it', function () {
-    it('should receive valid props', function () {
+    it('should receive valid props when invalidate', function () {
       register({ Foo });
 
       const component = renderComponent(wire(

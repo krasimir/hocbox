@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export default function feed(Component) {
+export function feed(Component) {
   var _listeners = [];
   var _defaultFeedProps = {};
 
