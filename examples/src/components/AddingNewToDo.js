@@ -26,14 +26,15 @@ class AddingNewToDo extends Component {
   }
   render() {
     return (
-      <section>
+      <div>
         <input
           type='text'
           ref='inputField'
+          placeholder='type a task'
           onChange={ this._onValueChange }
           onKeyUp={ this._onKeyUp }
           value={ this.state.value } />
-      </section>
+      </div>
     );
   }
 }

@@ -5,7 +5,7 @@ import ListTodos from './components/ListTodos';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className='main'>
         <AddingNewToDo />
         <ListTodos />
       </div>
