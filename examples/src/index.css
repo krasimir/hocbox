@@ -59,3 +59,13 @@ input[type='text'] {
   background: #000;
   color: #FFF;
 }
+.footer {
+  color: #999;
+  font-size: 0.8em;
+  margin-top: 1em;
+  text-align: center;
+}
+.footer span {
+  display: inline-block;
+  margin-right: 1em;
+}
