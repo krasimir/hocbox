@@ -111,7 +111,7 @@ Provide anything to any React component of your application. The dependencies ar
   </tbody>
 </table>
 
-<table style="width:100%;border-top:solid 4px #999;">
+<table>
   <tbody>
   <tr>
     <td colspan="2"><strong><code>invalidate()</code></strong></td>
@@ -193,6 +193,32 @@ Passing messages between components and other parts of your system.
       <ul>
         <li>Name of the signal</li>
         <li>Callback</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>returns</strong></td>
+    <td>nothing</td>
+  </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+  <tr>
+    <td colspan="2"><strong><code>
+      dispatch(&lt;string>, &lt;data>)
+    </code></strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">Dispatching/emitting a signal</td>
+  </tr>
+  <tr>
+    <td><strong>accepts</strong></td>
+    <td>
+      <ul>
+        <li>Name of the signal</li>
+        <li>Payload</li>
       </ul>
     </td>
   </tr>
