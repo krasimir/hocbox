@@ -20,7 +20,7 @@ export function clear() {
   Data = {};
 }
 
-export function invalidate(what = null, storage = 'hocbox') {
+export function invalidate(storage = 'hocbox') {
   if (!Data[storage]) Data[storage] = {};
   if (!Data[storage].___dependenciesToProps___) Data[storage].___dependenciesToProps___ = [];
   Data[storage].___dependenciesToProps___.forEach(f => f());

@@ -111,6 +111,25 @@ Provide anything to any React component of your application. The dependencies ar
   </tbody>
 </table>
 
+<table>
+  <tbody>
+  <tr>
+    <td colspan="2"><strong><code>invalidate()</code></strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">Invalidates the dependencies. Useful when we change some of them and we want to rerender.</td>
+  </tr>
+  <tr>
+    <td><strong>accepts</strong></td>
+    <td>nothing</td>
+  </tr>
+  <tr>
+    <td><strong>returns</strong></td>
+    <td>nothing</td>
+  </tr>
+  </tbody>
+</table>
+
 ```js
 
 // in App.js
@@ -145,7 +164,7 @@ Passing messages between components and other parts of your system.
     </code></strong></td>
   </tr>
   <tr>
-    <td colspan="2">Enhancing React component so it has `dispatch`, `subscribe` and `unsubscribe` methods as props.</td>
+    <td colspan="2">Enhancing React component so it has <code>dispatch</code>, <code>subscribe</code> and <code>unsubscribe</code> methods as props.</td>
   </tr>
   <tr>
     <td><strong>accepts</strong></td>
