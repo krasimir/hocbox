@@ -111,7 +111,7 @@ Provide anything to any React component of your application. The dependencies ar
   </tbody>
 </table>
 
-<table>
+<table style="width:100%;border-top:solid 4px #999;">
   <tbody>
   <tr>
     <td colspan="2"><strong><code>invalidate()</code></strong></td>
