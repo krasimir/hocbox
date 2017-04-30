@@ -176,3 +176,29 @@ Passing messages between components and other parts of your system.
   </tr>
   </tbody>
 </table>
+
+<table>
+  <tbody>
+  <tr>
+    <td colspan="2"><strong><code>
+      subscribe(&lt;string>, &lt;function>)
+    </code></strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">Subscribing to a signal</td>
+  </tr>
+  <tr>
+    <td><strong>accepts</strong></td>
+    <td>
+      <ul>
+        <li>Name of the signal</li>
+        <li>Callback</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>returns</strong></td>
+    <td>nothing</td>
+  </tr>
+  </tbody>
+</table>
