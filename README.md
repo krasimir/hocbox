@@ -124,7 +124,7 @@ const Title = function({ text }) {
   return <h1>{ text }</h1>;
 }
 
-export default hocbox.wire(
+export default wire(
   Title, // <--- component that needs something
   ['TitleText'], // <--- a key used in the `register` method
   text => ({ text }) // <--- mapping to props function
