@@ -35,10 +35,10 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 
 
 ```js
-import hocbox from 'hocbox';
+import { feed } from 'hocbox';
 
 // We pass a React Component to hocbox.feed
-const Component = hocbox.feed(function({ answer }) {
+const Component = feed(function({ answer }) {
   return <p>The answer is { answer || '...' }</p>;
 });
 
@@ -110,10 +110,16 @@ Service('/api/get/the/answer').then(data => {
 </table>
 
 ```js
+
 // in App.js
-hocbox.register({ TitleText: 'Hello world' });
+import { register } from 'hocbox';
+
+register({ TitleText: 'Hello world' });
+
 
 // in Title.jsx
+import { wire } from 'hocbox';
+
 const Title = function({ text }) {
   return <h1>{ text }</h1>;
 }
