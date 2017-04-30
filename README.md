@@ -17,7 +17,7 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 <table>
   <tbody>
   <tr>
-    <td colspan="2"><strong><code>hocbox.feed(&lt;component>):&lt;component></code></strong></td>
+    <td colspan="2"><strong><code>feed(&lt;component>):&lt;component></code></strong></td>
   </tr>
   <tr>
     <td colspan="2">For the cases when we want to rerender a component with given props</td>
@@ -37,7 +37,7 @@ A collection of [Higher-order React components](https://github.com/krasimir/reac
 ```js
 import { feed } from 'hocbox';
 
-// We pass a React Component to hocbox.feed
+// We pass a React Component to feed
 const Component = feed(function({ answer }) {
   return <p>The answer is { answer || '...' }</p>;
 });
@@ -57,16 +57,18 @@ Service('/api/get/the/answer').then(data => {
 
 ```
 
-*`Service` in the exampe above is just a HTTP layer that fetches data from let's say API.*
+*`Service` in the example above is just a HTTP layer that fetches data from let's say API.*
 
 ---
 
-## `Dependency injection`
+## Dependency injection
+
+Provide anything to any React component of your application. The dependencies are `register`ed at the very top layer and via the `wire` method they may reach your components.
 
 <table>
   <tbody>
   <tr>
-    <td colspan="2"><strong><code>hocbox.register(&lt;object>)</code></strong></td>
+    <td colspan="2"><strong><code>register(&lt;object>)</code></strong></td>
   </tr>
   <tr>
     <td colspan="2">Defines dependencies</td>
@@ -86,7 +88,7 @@ Service('/api/get/the/answer').then(data => {
   <tbody>
   <tr>
     <td colspan="2"><strong><code>
-      hocbox.wire(&lt;component>, &lt;array>, &lt;function>):&lt;component>
+      wire(&lt;component>, &lt;array>, &lt;function>):&lt;component>
     </code></strong></td>
   </tr>
   <tr>
@@ -130,3 +132,28 @@ export default wire(
   text => ({ text }) // <--- mapping to props function
 );
 ```
+
+## Signals
+
+Passing messages between components and other parts of your system.
+
+<table>
+  <tbody>
+  <tr>
+    <td colspan="2"><strong><code>
+      signal(&lt;component>):&lt;component>
+    </code></strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">Enhancing React component so it has `dispatch`, `subscribe` and `unsubscribe` methods as props.</td>
+  </tr>
+  <tr>
+    <td><strong>accepts</strong></td>
+    <td>React component</td>
+  </tr>
+  <tr>
+    <td><strong>returns</strong></td>
+    <td>Enhanced React component</td>
+  </tr>
+  </tbody>
+</table>
