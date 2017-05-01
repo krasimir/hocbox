@@ -29,6 +29,10 @@ export function dispatch(key, data, source) {
   }
 }
 export function subscribe(key, signalID, callback) {
+  if (typeof key === 'object') {
+    Object.keys(key).forEach(k => subscribe(k, key[k]));
+    return;
+  }
   if (!SignalStorage[key]) SignalStorage[key] = {};
   if (typeof signalID === 'function') {
     callback = signalID;
@@ -48,7 +52,7 @@ export function unsubscribe(key, signalID) {
   }
 }
 
-export function signal(Component) {
+export function signal(Component, subscribeTo) {
   return class SignalComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -71,6 +75,7 @@ export function signal(Component) {
         });
       }
 
+      subscribeTo && subscribeTo.forEach(to => this._subscribe(to));
       Object.keys(props).forEach(prop => {
         if (props[prop] === true) this._subscribe(prop);
       })

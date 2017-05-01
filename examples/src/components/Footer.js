@@ -2,11 +2,6 @@ import React from 'react';
 import { wire, signal } from '../../../lib';
 
 class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    props.subscribe('new-todo');
-  }
   render() {
     const { all, done } = this.props;
     const latestAddedTodo = this.props['new-todo'];
@@ -21,7 +16,7 @@ class Footer extends React.Component {
 }
 
 export default wire(
-  signal(Footer),
+  signal(Footer, ['new-todo']),
   ['store'],
   store => ({
     all: store.getTodos().length,

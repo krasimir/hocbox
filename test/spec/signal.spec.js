@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { signal, dispatch, clearLog, getLog, subscribe } from '../../src';
 
 describe('Given the signal helper', function () {
-  beforeEach(() => {
+  afterEach(() => {
     clearLog();
   });
   describe('when dispatching a signal', function () {
@@ -17,6 +17,19 @@ describe('Given the signal helper', function () {
       dispatch('lastName', 'Bar');
 
       expect(result.text()).to.equal('Hello Foo Bar');
+    });
+    describe('and when we subscribe by giving second argument of `signal` method', function () {
+      it('should subscribe to the signals', function () {
+        const Component = signal(({ firstName, lastName }) => {
+          return <p>Hello { firstName } { lastName}</p>;
+        }, ['firstName', 'lastName']);
+        const result = mount(<Component />);
+
+        dispatch('firstName', 'Foo');
+        dispatch('lastName', 'Bar');
+
+        expect(result.text()).to.equal('Hello Foo Bar');
+      });
     });
   });
   describe('when we have two components and one of them dispatches a signal', function () {
@@ -89,12 +102,12 @@ describe('Given the signal helper', function () {
       mount(<ComponentC tartar />);
 
       expect(getLog()).to.deep.equal([
-        { key: 'tartar', data: 'A', source: 'CA_6' },
-        { key: 'foo', data: 'B', source: 'CB_7' },
-        { key: 'tartar', data: 'A', source: 'CA_6' },
-        { key: 'bar', data: 'C', source: 'ComponentCClass_8' },
-        { key: 'foo', data: 'B', source: 'CB_7' },
-        { key: 'tartar', data: 'A', source: 'CA_6' }
+        { key: 'tartar', data: 'A', source: 'CA_7' },
+        { key: 'foo', data: 'B', source: 'CB_8' },
+        { key: 'tartar', data: 'A', source: 'CA_7' },
+        { key: 'bar', data: 'C', source: 'ComponentCClass_9' },
+        { key: 'foo', data: 'B', source: 'CB_8' },
+        { key: 'tartar', data: 'A', source: 'CA_7' }
       ])
     });
   });
@@ -106,6 +119,22 @@ describe('Given the signal helper', function () {
       dispatch('test-signal', 42);
 
       expect(spy).to.be.calledWith(42);
+    });
+  });
+  describe('when subscribing using an object', function () {
+    it('should properly react on dispatches', function () {
+      const spy1 = sinon.spy();
+      const spy2 = sinon.spy();
+
+      subscribe({
+        'test-signal1': spy1,
+        'test-signal2': spy2
+      });
+      dispatch('test-signal1', 1);
+      dispatch('test-signal2', 2);
+
+      expect(spy1).to.be.calledWith(1);
+      expect(spy2).to.be.calledWith(2);
     });
   });
 });

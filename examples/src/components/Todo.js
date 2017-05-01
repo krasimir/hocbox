@@ -16,9 +16,10 @@ class Todo extends React.Component {
     const status = done ?
       <a onClick={ this._markAsNotDone.bind(this, id) }>mark as not done</a> :
       <a onClick={ this._markAsDone.bind(this, id) }>mark as done</a>;
+    const backgroundColor = done ? '#009f00': 'transparent';
 
     return (
-      <div className='todo'>
+      <div className='todo' style={{ backgroundColor }}>
         { text }
         <div className='links'>
           { status }
